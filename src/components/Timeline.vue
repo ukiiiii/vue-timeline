@@ -22,10 +22,6 @@
       </div>
     </div>
 
-    <div id="triangle-down" :style="slideTriangle"></div>
-
-
-
 <transition name="slide-fade">
         <div class="textAppear" :key="currentContent.shortText">
         {{ currentContent.shortText }}
@@ -53,7 +49,6 @@ export default {
     return {
       showed_box: 0,
       singleWidth: 1300,
-      activeButtonCoordinates: undefined,
       content: [
         {
         title: "Družina nekoč in danes",
@@ -109,12 +104,6 @@ export default {
           goToIndex: function(index, elementRef) {
             this.showed_box = index;
             this.setButtonMiddlePosition(elementRef)
-          },
-          setButtonMiddlePosition(elementRef) {
-            const left = this.$refs.elementRef.getBoundingClientRect().left
-            const right = this.$refs.elementRef.getBoundingClientRect().right
-            console.log(this.$refs.elementRef)
-            this.activeButtonCoordinates = (right + left)/2
           }
         },
           computed: {
@@ -123,10 +112,7 @@ export default {
           },
           slideContent: function() {
             return `transform: translateX(${this.singleWidth*(-1) * this.showed_box}px)`
-        },
-        slideTriangle: function() {
-          return `transform: translateX(${this.activeButtonCoordinates}px)`
-      }
+        }
       }
    }
 </script>
@@ -152,7 +138,6 @@ export default {
 
 .main{
   position: relative;
-  /* margin-top: 30px; */
 }
 
 .image {
