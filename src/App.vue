@@ -9,19 +9,8 @@ import Timeline from './components/Timeline'
 
 export default {
   name: 'App',
-  data() {
-    return {
-      // images: [
-      //   {img: "/static/photo1.jpg"},
-      //   {img: "/static/photo2.jpg"},
-      //   {img: "/static/photo3.jpg"},
-      //   {img: "/static/photo4.jpg"},
-      //   {img: "/static/photo5.jpg"},
-      // ],
-    }
-  },
   components: {
-    Timeline
+    Timeline,
   }
 }
 </script>
