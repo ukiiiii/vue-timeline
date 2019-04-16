@@ -103,7 +103,6 @@ export default {
         methods: {
           goToIndex: function(index, elementRef) {
             this.showed_box = index;
-            this.setButtonMiddlePosition(elementRef)
           }
         },
           computed: {
